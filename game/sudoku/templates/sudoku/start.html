@@ -1,0 +1,52 @@
+{% extends 'sudoku/layout.html' %}
+
+{% block title %}
+    <div class="container" align="center">
+      <div class="jumbotorn">
+        <h1>Welcome to Sudoku Solver</h1>
+        <p>Get ready to play!</p>
+      </div>
+      <br>
+{% endblock %}
+
+{% block body %}
+    {% include 'sudoku/grid.html' with grid=grid %}
+    
+    <form class="form-group" method="POST" action="{% url 'sudoku:start' %}">
+    <div class="container" align="center">
+      <fieldset class="form-group">
+        <div class="col-md-auto">
+          <h2>
+            <legend class="col-form-label col-sm-2 pt-0">Difficulty</legend>
+          </h2>
+          <div class="col-sm-10">
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="level" id="gridRadios1" value="Easy" checked>
+              <label class="form-check-label" for="gridRadios1">
+                Easy ({{ difficulty.easy }})
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="level" id="gridRadios2" value="Medium">
+              <label class="form-check-label" for="gridRadios2">
+                Medium ({{ difficulty.medium }})
+              </label>
+            </div>
+            <div class="form-check disabled">
+              <input class="form-check-input" type="radio" name="level" id="gridRadios3" value="Hard">
+              <label class="form-check-label" for="gridRadios3">
+                Hard ({{ difficulty.hard }})
+              </label>
+            </div>
+            <div class="form-check">
+              <p></p>
+              <button id='brestart' type="submit" class="btn btn-primary btn-lg" name="button">Choose</button>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+    </form>
+
+{% endblock %}
+
