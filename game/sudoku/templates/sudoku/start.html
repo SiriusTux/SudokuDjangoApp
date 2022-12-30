@@ -13,6 +13,7 @@
     {% include 'sudoku/grid.html' with grid=grid %}
     
     <form class="form-group" method="POST" action="{% url 'sudoku:start' %}">
+    {% csrf_token %}
     <div class="container" align="center">
       <fieldset class="form-group">
         <div class="col-md-auto">

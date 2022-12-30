@@ -9,7 +9,7 @@ def grid_values(grid):
     # Se trovo altri caratteri in grid es. '|' li elimino
     chars = [c for c in grid if c in digits or c in '0.']
     # Alla fine voglio 81 caratteri, uno per ogni square
-    assert len(chars) == 81
+    #assert len(chars) == 81
     return dict(zip(squares, chars))
 
 

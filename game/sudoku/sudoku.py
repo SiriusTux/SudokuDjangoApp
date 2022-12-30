@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-from utility import grid_values, cross
+from .utility import grid_values, cross
 
 
 def parse_grid(grid):

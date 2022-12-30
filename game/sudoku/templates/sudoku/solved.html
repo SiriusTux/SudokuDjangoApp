@@ -1,12 +1,11 @@
-{% from "grid.html" import display_grid %}
-{% extends 'layout.html' %}
+{% extends 'sudoku/layout.html' %}
 
 {% block title %}
     <div class="container" align="center">
     <div class="jumbotorn">
       <h1>Here is your Sudoku Solved</h1>
       <p>Do you want to play again?</p>
-      <a href="/">
+      <a href="{% url 'sudoku:start' %}">
         <button id='brestart' type="button" class="btn btn-primary btn-lg" name="button">Yes</button>
       </a>
     </div>
@@ -14,7 +13,6 @@
 {% endblock %}
 
 {% block body %}
-      {{ super() }}
-      {{ display_grid(grid) }}
+  {% include 'sudoku/grid.html' with grid=grid %}
 {% endblock %}
 
