@@ -4,15 +4,19 @@
     <div class="container" align="center">
     <div class="jumbotorn">
       <h1>Here is your Sudoku Solved</h1>
-      <p>Do you want to play again?</p>
-      <a href="{% url 'sudoku:start' %}">
-        <button id='brestart' type="button" class="btn btn-primary btn-lg" name="button">Yes</button>
-      </a>
     </div>
       <br>
 {% endblock %}
 
 {% block body %}
   {% include 'sudoku/grid.html' with grid=grid %}
+  <p></p>
+  <div class="container" align="center">
+    <p>Do you want to play again?</p>
+    <a href="{% url 'sudoku:start' %}">
+      <button id='brestart' type="button" class="btn btn-primary btn-lg" name="button">Yes</button>
+    </a>
+  </div>
+
 {% endblock %}
 
